@@ -5,6 +5,12 @@
     scroll-behavior: smooth;
 }
 
+.trending, .movies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .app{
     min-height: 100vh;
     background-color: #39445a;
