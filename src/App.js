@@ -1,8 +1,8 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route,  Routes} from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import MainNav from "./components/Navigation/MainNav";
-import { Container, Switch } from "@mui/material";
+import { Container } from "@mui/material";
 import Trending from "./components/Pages/Trending/Trending";
 import Movies from "./components/Pages/Movies/Movies";
 import Series from "./components/Pages/Series/Series";
@@ -15,12 +15,12 @@ function App() {
         <Header />
         <div className="app">
           <Container>
-            <Switch>
-              <Route path="/" Component={Trending} exact />
-              <Route path="/movies" Component={Movies} />
-              <Route path="/series" Component={Series} />
-              <Route path="/search" Component={Search} />
-            </Switch>
+            <Routes>
+              <Route exact path="/" element={<Trending />} />
+              <Route exact path="/movies" element={<Movies />} />
+              <Route exact path="/series" element={<Series />} />
+              <Route exact path="/search" element={<Search />} />
+            </Routes>
           </Container>
         </div>
 
