@@ -1,0 +1,9 @@
+.bottom-nav{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    z-index: 100;
+}
+.navBar{
+    background-color: #2d313a !important;
+}
