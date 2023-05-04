@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import SingleContent from "../../SingleContent/SingleContent";
-import './Trending.css'
 import CustomPagination from "../../Pagination/CustomPagination";
 import ContentModal from "../../ContentModal/ContentModal";
 
@@ -13,8 +12,6 @@ const Trending = () => {
     const { data } = await axios.get(
       `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
     );
-    // console.log(data);
-    // console.log(data.vote_average)
     setContent(data.results);
   };
 

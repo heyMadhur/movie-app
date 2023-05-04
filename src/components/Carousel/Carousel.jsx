@@ -12,14 +12,11 @@ export default function Carousel({ media_type, id }) {
     const { data } = await axios.get(
       `https://api.themoviedb.org/3/${media_type}/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     );
-    console.log(data);
     setCredits(data.cast);
-    // console.log(credits)
   };
 
   useEffect(() => {
     fetchCredits();
-    console.log("Carousel")
   }, []);
 
   const responsive= {
@@ -38,7 +35,6 @@ export default function Carousel({ media_type, id }) {
 
   const items = credits?.map((c) => (
     <div className="carouselItem">
-        {console.log("HEy")}
       <img
         src={c.profile_path ? `${img_300}/${c.profile_path}` : noPicture}
         alt={c?.name}

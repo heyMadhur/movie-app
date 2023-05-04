@@ -12,8 +12,6 @@ const Genres = ({
 }) => {
 
   const handleAdd=(g)=>{
-    // console.log("Clicked");
-    // console.log(g);
     setSelectedGenres([...selectedGenres, g]);
     setGenres(genres.filter((genre)=> genre.id !==g.id ));
     setPage(1);
@@ -32,11 +30,9 @@ const Genres = ({
       `https://api.themoviedb.org/3/genre/${type}/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
       );
       
-      // console.log(data);
       setGenres(data.genres);
     };
     
-    //   console.log(genres);
     useEffect(() => {
       fetchGenres();
       
@@ -45,7 +41,6 @@ const Genres = ({
         setGenres([]);
       };
     }, []);
-    // console.log("selected= "+selectedGenres)
     
     return (
       <div style={{ padding: "6px 0" }}>
