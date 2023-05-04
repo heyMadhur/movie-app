@@ -5,7 +5,7 @@
     scroll-behavior: smooth;
 }
 
-.trending, .movies{
+.trending, .movies, .series, .search{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

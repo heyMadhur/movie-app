@@ -18,12 +18,17 @@ const SingleContent = ({
         <Badge
           badgeContent={vote_average}
           color={
-            vote_average > 7
+            (vote_average > 7)
               ? "success"
-              : vote_average > 4
-              ? "primary"
-              : "danger"
+              :"primary"
           }
+          // color={
+          //   (vote_average > 7)
+          //     ? "success"
+          //     : (vote_average > 4)
+          //     ? "primary"
+          //     : "danger"
+          // }
         />
       )}
       <img
