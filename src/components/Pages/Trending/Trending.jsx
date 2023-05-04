@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import SingleContent from "../../SingleContent/SingleContent";
 import './Trending.css'
 import CustomPagination from "../../Pagination/CustomPagination";
+import ContentModal from "../../ContentModal/ContentModal";
 
 const Trending = () => {
   const [content, setContent] = useState([]);
@@ -24,6 +25,7 @@ const Trending = () => {
   return (
     <div>
       <span className="pageTitle">Trending</span>
+      <ContentModal />
       <div className="trending">
         {content &&
           content.map((c) => (
