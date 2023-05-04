@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
-import "./Search.css";
+import React, { useEffect, useState } from "react";
 import { Tab, Tabs, ThemeProvider, createTheme } from "@mui/material";
 import axios from "axios";
 import CustomPagination from "../../Pagination/CustomPagination";
 import SingleContent from "../../SingleContent/SingleContent";
+import SearchBar from "../../SearchBar/SearchBar";
 
 const Search = () => {
-  const inputRef = useRef(null);
+
   const [searchText, setSearchText] = useState("");
   const [type, setType] = useState(0);
   const [page, setPage] = useState(1);
@@ -44,28 +44,8 @@ const Search = () => {
 
   return (
     <>
-      {/* <span className="pageTitle">search</span> */}
-      <form
-        className="input"
-        onSubmit={(e) => {
-          handleSearch(e);
-          inputRef.current?.blur();
-        }}
-      >
-        <input
-          ref={inputRef}
-          type="input"
-          placeholder="Search Movie, TV Shows etc..."
-          className="input_box"
-          value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
-        />
-        <button className="input_submit" type="submit">
-          Search
-        </button>
-      </form>
+
+      <SearchBar handleSearch={handleSearch} searchText={searchText} setSearchText={setSearchText} />
 
       <ThemeProvider theme={darkTheme}>
         <Tabs
